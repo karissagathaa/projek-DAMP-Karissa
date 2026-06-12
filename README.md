@@ -9,7 +9,7 @@ Proyek ini adalah pembuatan website Curriculum Vitae (CV) interaktif dan portofo
 
 ## 🌐 Link Live Demo (Hosting)
 Website ini telah dihosting secara publik dan dapat diakses melalui tautan berikut:
-**Link Vercel/GitHub Pages:** 
+[**Link Vercel/GitHub Pages:** ](https://github.com/karissagathaa/projek-DAMP-Karissa)
 
 ## 🎨 Penerapan Prinsip UI/UX
 Website ini dibangun dengan memperhatikan ketentuan tugas, antara lain:
