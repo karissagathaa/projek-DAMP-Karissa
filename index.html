@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Karissa Agatha - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- PRINCIPLES OF UI/UX: Typography & Color Palette --- */
+        :root {
+            --primary-color: #1e293b; /* Deep Navy */
+            --secondary-color: #3b82f6; /* Soft Blue Accent */
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- HERO SECTION (Ubah ke Center karena Tanpa Foto) --- */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem 2rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text h2 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.7rem;
+            margin: 0 1rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- LAYOUT & SECTION STYLE --- */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* --- EDUCATION & SKILLS GRID --- */
+        .edu-skills-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item h3 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+        }
+
+        .edu-item .sub {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-item .date {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background-color: #eff6ff;
+            color: var(--secondary-color);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #dbeafe;
+        }
+
+        /* --- TIMELINE EXPERIENCE --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            opacity: 0.2;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--card-bg);
+            border: 3px solid var(--secondary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content .badge {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .badge.ongoing {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-box a, .contact-box p {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        /* --- UI/UX PRINCIPLE: RESPONSIVENESS (Media Queries) --- */
+        @media screen and (max-width: 768px) {
+            .navbar { padding: 1rem; }
+            .nav-links { display: none; }
+            
+            .hero-text h1 { font-size: 2.5rem; }
+
+            .edu-skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after { left: 31px; }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::after { left: 22px; }
+            .right { left: 0%; }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">KA.</div>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#pendidikan">Pendidikan & Kemampuan</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Karissa Agatha</h1>
+                <h2>Mahasiswa Sistem Informasi</h2>
+                <p>Mahasiswa Sistem Informasi semester 2 di Universitas Brawijaya yang memiliki ketertarikan tinggi dalam dunia kepanitiaan, khususnya di bidang acara. Memiliki keinginan kuat untuk berkontribusi merancang serta menyusun kegiatan agar berjalan terstruktur dan sukses.</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/karissagathaa" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:karissaagatha@student.ub.ac.id"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            <p style="font-size: 1.05rem; color: var(--text-dark);">
+                Sebagai mahasiswi Fakultas Ilmu Komputer, saya memadukan kemampuan berpikir struktural dari program studi Sistem Informasi dengan kreativitas tinggi dalam manajemen acara (Event Management). Fokus utama saya adalah memastikan manajemen operasional lapangan dan komunikasi kepanitiaan berjalan dengan harmonis.
+            </p>
+        </div>
+    </section>
+
+    <section id="pendidikan" style="background-color: #f8fafc; max-width: 100%; padding-left: 0; padding-right: 0;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">Pendidikan & Kemampuan</h2>
+            <div class="edu-skills-container">
+                
+                <div>
+                    <div class="card">
+                        <div class="edu-item">
+                            <span class="date">2025 - Sekarang</span>
+                            <h3>Sarjana Sistem Informasi</h3>
+                            <div class="sub">Fakultas Ilmu Komputer, Universitas Brawijaya</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="edu-item">
+                            <span class="date">2022 - 2025</span>
+                            <h3>Sekolah Menengah Atas</h3>
+                            <div class="sub">SMAN 15 Kota Tangerang</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Adaptif</div>
+                        <div class="skill-tag">Kreatif</div>
+                        <div class="skill-tag">Kerjasama Tim</div>
+                        <div class="skill-tag">Bertanggung Jawab</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="pengalaman">
+        <h2 class="section-title">Pengalaman Kepanitiaan</h2>
+        <div class="timeline">
+            
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <span class="badge ongoing">On Going</span>
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2026</span>
+                    <h3>Anggota Divisi Penanggung Jawab Lapangan</h3>
+                    <p>Panitia Synergy of Symphony 2026</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <span class="badge ongoing">On Going</span>
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2026</span>
+                    <h3>Staff Divisi Humas</h3>
+                    <p>Panitia LKMM-TM 2026</p>
+                </div>
+            </div>
+
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <span class="badge ongoing">On Going</span>
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2026</span>
+                    <h3>Anggota Divisi Acara</h3>
+                    <p>Panitia Schotival 2026</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <span class="badge" style="background-color: #e2e8f0;">Selesai</span>
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2026</span>
+                    <h3>Anggota Divisi Acara</h3>
+                    <p>Panitia Paskah PMK Daniel 2026</p>
+                </div>
+            </div>
+
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2024</span>
+                    <h3>Koordinator Divisi Acara</h3>
+                    <p>Kepengurusan Persekutuan Pelajar Kristen SMAN 15 Tangerang</p>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2024</span>
+                    <h3>Koordinator Divisi Acara</h3>
+                    <p>Panitia Natal Persekutuan Pelajar Kristen SMAN 15 Kota Tangerang</p>
+                </div>
+            </div>
+
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <span class="date" style="display:block; font-size:0.8rem; color:#64748b;">2023</span>
+                    <h3>Anggota Divisi Dana Usaha</h3>
+                    <p>Panitia Retreat Pelajar Kristen se-Kota Tangerang</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="kontak" style="background-color: #f8fafc; max-width: 100%; padding-left: 0; padding-right: 0;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="contact-cards">
+                
+                <div class="contact-box">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telepon / WA</h3>
+                    <p>+62 812-8724-6726</p>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:karissaagatha@student.ub.ac.id">karissaagatha@student.ub.ac.id</a>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/karissagathaa" target="_blank">karissagathaa</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Karissa Agatha.</p>
+    </footer>
+
+</body>
+</html>
